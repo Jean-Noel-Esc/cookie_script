@@ -9,7 +9,19 @@
 <body>
 
 <h1> Premier cookie : la page d'enregistrement</h1>
+
+<form name="loginForm">
+    <p>
+    Vous devez vous entegistrer avant de pouvoir visiter le reste du site.
+    Pour cela saisissez vos nom et prénom puis cliquez sur le bouton "enregistrement". 
+    </p>
+    <input type= "text" name= "fullName" size= "35">
+    <br>
+    <input type= "button" value= "Enregistrement" size= "35"
+    onClick = "register(loginForm.fullName.value)">
+</form>
 <script>
+
 // Cette fonction renvoie la partie de la chaine 
 // "monCookie=userName" située entre "=" et ";"
 function getCookieVal (offset) {
@@ -34,8 +46,24 @@ function getCookie (cookieName) {
     // le contenu du cookie pour retrouver celui qui nous intéresse;
 
     var i = 0;
+    // soit tant que la compteur i est infèrieur au nombre de caratère du cookie ...
     
+    while (i < cookieLength) {
+    
+    // Ici nous déclarons le compteur "j" du nombre de caractères de "monCookie"
+    var j = i + argLength;
 
+        // Si on trouve "monCookie" dans le cookie
+        if ( doxument.cookie.substring(i, j == arg)){
+            //on renvoie la valeur qui lui est associé 
+            return getCookieVal(j)
+        }
+        // i = document.cookie.indexOf(" ", i) + 1;
+    }
+    if ( i == 0 ) {
+        break
+    }
+    return null;
 }
 
 
