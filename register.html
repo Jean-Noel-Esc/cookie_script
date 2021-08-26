@@ -66,6 +66,46 @@ function getCookie (cookieName) {
     return null;
 }
 
+function setCookie(name, value) {
+    // ici nous voulons capturer tous les arguments passées à la fonction 
+    // setCookie()
+
+    var argv = setCookie.arguments;
+
+    // Nombre d'arguments passés à cette fonction
+
+    var argc = setCookie.arguments.length;
+
+    // Normalement le troisième argument est la date d'èxpiration 
+    // Si ce n'est pas le cas , on donne à la variable expires la valeur null
+    // Alors le cookie sera considéré comme temporaire
+
+    var expires = (argc > 2) ? argv[2] : null;
+
+    // Normalement le quatrième argument est le chemin d'accés 
+    // Si ce n'est pas le cas , on donne à cette variable path la valeur null
+    
+    var path = (argc > 3) ? argv[3] : null;
+
+    // Normalement le 5eme argument est le nom de domaine 
+    // si ce n'esty pas le cas on donne à la variable domain la valeur null
+
+    var domain  = (argc > 4) ? argv[4] : null;
+
+    // Normalement , le 6ème argument est true or false selon
+    // que le cookie est sécurisée ou non.
+    // sécurisé signifie qu'il ne peut etre transmis à serveur sécurisée que par https
+    // Si cen'est pas le cas , on donne à la var secure la valeur false.
+    var secure = (argc > 5) ? argv[5] : false;
+
+    // définition du cookie
+    document.cookie = "name" + "=" + escape(value) +
+    ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+    ((path == null) ? "" : ("; path=" + path)) +
+    ((domain == null) ? "" : ("; domain=" + domain)) +
+    ((secure == true) ? "; secure" : "");
+}
+
 
 
 </script>
