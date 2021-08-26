@@ -27,4 +27,43 @@ Voici les deux principales raisons pour l'usage des cookies/
     -Conserver trace des transactions:
     Vous pouvez conserver l'état de n'importe quelle transaction , quelle que soit sa durée, ce qui permet
      de se prémunir contre toute interuption accidentelle.
-     
+
+
+Les cookies et la sécurité:
+
+
+Les cookies sont utilisés d'un e facon sécurisé parce que leur utilisation est strictement régie par les navigateurs Web.
+Ils se situent tout à fait au bas de l'echelle des applications susecptible de créer des problèmes de securité.
+Néanmoins ils sont l'objets de continuelles polémique dans les cercles des programmeurs et ce pour deux raisons:
+    
+    Les cookies s'affranchissent des limites habituelles d'un navigateur en écrivant
+    directement des informations sur votre disque dur .
+
+    Il y a des gens qui craignent que les cookies endommagent leur ordinateur soit en y placant 
+    de trop grande quantités d'information soit en y introduisant un virus.
+
+        Les cookies sont dotés de sauvegarde contre ces deux eventualités.
+        Ainsi quel que soit le language vous ne pouvez pas vous affranchir
+        des limites de bon sens inposées par les navigateurs
+
+            - Emplacement de stockage des cookies:
+            IE par ex conserve les cookies sous forme de fichiers texte
+            dans le repertoire
+            C:/Documents and settings/[userName]/Local Settings/ Temporary Internet files
+
+            - Mozilla firefox les cookies sont accessibles via le menu :
+            Option / Vie privée / Afficher les cookies 
+
+            - Autorisation d'accés aux cookies 
+            La visibilité des cookies peut etre configurée par l'utilisateur . 
+            Mais quelle que soit cette config sa visibilité maximale ne peut excéder celle du site qui
+            l'a créé.
+            Ainssi un cookie crée par une page ne peut pas etre lu par une autre page.
+
+    
+    Les cookies permettent aux développeurs Web de rassembler des infos commerciales détaillées
+    sur un visiteur sans que celui_ ci en soit averti et qu'il donne son consetement.
+    Le sinformations rassemblées par les cookies peuvent etre exploitées par des scripts CGI, ce qui permet
+    d'interpréter chaque phase du dialogue client/serveur , chaque clic , chaque frappe chaque achat.
+
+ 
