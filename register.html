@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regsiter cookie script</title>
+</head>
+<body>
+
+<h1> Premier cookie : la page d'enregistrement</h1>
+<script>
+// Cette fonction renvoie la partie de la chaine 
+// "monCookie=userName" située entre "=" et ";"
+function getCookieVal (offset) {
+    var endstr = document.cookie.indexOf (";", offset);
+    if (endstr == -1) {
+        enstr = document.cookie.length;
+    }
+    return unescape (document.cookie.substring(offset, endstr));
+}
+
+// Ici nous allons isoler le texte du cookie.
+// Pour cela nous commencons par rechercher le nombre de caractères
+// présent dans la chaine de caractères "monCookie="
+function getCookie (cookieName) {
+    var arg = cookieName + "=";
+    var argLength = arg.length;
+
+    // La longueur du cookie
+    var cookieLength = document.cookie.length;
+    
+    // Maintenant nous devosn explorer caractère par caractère
+    // le contenu du cookie pour retrouver celui qui nous intéresse;
+
+    var i = 0;
+    
+
+}
+
+
+
+</script>
+    
+</body>
+</html>
