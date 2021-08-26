@@ -1,0 +1,30 @@
+LES COOKIES 
+
+    les cookies sont des petits fichiers texte
+    qu'un serveur web peut faire ecrire sur le disque dur d'un client par son navigateur.
+
+Créer un cookie peut se faire avec à peu prés n'importe quel language de programmation .
+Le but d'un cookie est de forunir des éléments d'information au serveur au sujet de 
+chaque visiteur d'un site web .
+
+Les cookies sont généralement crées et exploités par des programme CGI plutot que par des scripts.
+(CGI signifie Common Gateway Interface ce que l'on peut traduire par : interface de passerrelle généralisée).
+
+Pourquoi les utiliser?
+
+Les cookies permettent à un serveur Web de conserver trace de la visite de son site
+sur le propre ordinateur de l'utilisateur et de retrouver ces infos plus tard lorsque ce meme visiteur reviendra sur lesite
+
+Ils permettent notament d'acceuillir chaque visiteur de facon personnalisé.
+
+Voici les deux principales raisons pour l'usage des cookies/
+    -Identifier les visiteurs:
+    Un cookie permet de savoir si un user a deja visité un site.
+    Vous pouvez ainsi acceuillir chaque utilisateur de facon personnalisé. Afficher 
+    des pages différente en fonction de ses precedente visites ou d'apres ses habitudes
+    de navigation.
+
+    -Conserver trace des transactions:
+    Vous pouvez conserver l'état de n'importe quelle transaction , quelle que soit sa durée, ce qui permet
+     de se prémunir contre toute interuption accidentelle.
+     
