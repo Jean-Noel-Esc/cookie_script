@@ -118,4 +118,7 @@ Une bonne recette de cookie:
 
         secure                  indique que le cookie doit être transmis au moyen d'un protocole sécurisé comme https
 
-        !! -> Une 
+        !! -> Une fois q'un cookie a été crée, seul le navigateur peut accéder à ses attributs.
+        Cette curieuse dyssymétrie (vous pouvez définir la attribut mais ne vous pas les relire) existe
+        pour des raisons de sécurité : empecher n'importe qui d'en prendre connaissance empeche des les altérer, ce qui
+        préserve leur intégrité.
