@@ -92,7 +92,8 @@ Une bonne recette de cookie:
         ((domain == null) ? "" : ("; domain=" + domain)) +
         ((secure == true) ? "; secure" : "");
 
-        Un mot sur la notation dans cet exemple extrait du script d'enregistrement
+        Un mot sur la notation dans cet exemple extrait du script d'enregistrement 
+        (l'operateur conditionnel/ alternative a  if else if)
 
         (condition) ? instruction_1 : instruction_2
 
@@ -104,4 +105,17 @@ Une bonne recette de cookie:
 
         -Les attributs facultatifs:
         Attributs               Description
-        expires = date_de_fin   Date 
+        expires = date_de_fin;  Date (exprimée en millisec.) aprés laquelle un cookie ne sera plus valide
+                                et sera supprimé par le navigateur.
+                                cette date est exprimée en coordonnées temporelle GMT (par exemple au moyen de la méthode 
+                                toGMTString() de l'objet Date).
+
+        path = chemin_d_acces;  Chemin d'accés du script CGI auquel le contenu du cookie peut être
+                                transmis. Par défaut c'est le répertoire racien du serveur
+
+        domain = domaine;       Le nom de domaine auquel le cookie peut etre envoyé. Pour des raisons de sécurité,il
+                                doit observer des limites strictes.
+
+        secure                  indique que le cookie doit être transmis au moyen d'un protocole sécurisé comme https
+
+        !! -> Une 
