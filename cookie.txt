@@ -66,4 +66,42 @@ Néanmoins ils sont l'objets de continuelles polémique dans les cercles des pro
     Le sinformations rassemblées par les cookies peuvent etre exploitées par des scripts CGI, ce qui permet
     d'interpréter chaque phase du dialogue client/serveur , chaque clic , chaque frappe chaque achat.
 
- 
+Une bonne recette de cookie:
+
+    La propriété cookie de l'obj document contient tous les cookies associé à un document
+
+    Pour créer un cookie , vous devez définir une paire variable / valeur représentant le nom du cookie
+    et le contenu du code (nom = valeur).
+    Comme la valeur donnée à un cookie ne peut contenir ni virgule ni point virgule ni espace vous pouvez
+    utiliser la fonction JS prédefinie escape() pour composer la valeur à créer.
+    Symétriquement ce sera la fonction cousine unescape qui permettra de récupérer cette valeur.
+    (escape () code les signes de ponctuation présents dans une chaine et unescape les reconstitue)
+    A part cette restriction un cookie peut contenir tout ce que vous voulez.
+
+    Outre son nom et sa valeur (obligatoires), vous pouvez définir les attributs facultatif énumérés au tableau séparés les uns des autres par de spoints virgule.
+
+    Pour créer un cookie et l"crire sur le disque , il vous suffit de taper document.ccookie 
+    à gauche du signe égal suivi d'une chaine de caractères contenant les informations
+    qui constituent le cookie.
+
+    ex:
+
+        document.cookie = name  + "=" + escape(value) +
+        ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+        ((path == null) ? "" : ("; path=" + path)) +
+        ((domain == null) ? "" : ("; domain=" + domain)) +
+        ((secure == true) ? "; secure" : "");
+
+        Un mot sur la notation dans cet exemple extrait du script d'enregistrement
+
+        (condition) ? instruction_1 : instruction_2
+
+        Signifie : si la condition est vraie, on excute l'instruction _1 ; sinon 
+        on exécute l'instruction 2 
+        "Si la valeur de expires est null ajouter "" une chaine vide à document.cookie sinon ajouter 
+        la chaine de caractères expires = dateGMT
+        ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) 
+
+        -Les attributs facultatifs:
+        Attributs               Description
+        expires = date_de_fin   Date 
