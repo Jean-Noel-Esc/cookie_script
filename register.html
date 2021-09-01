@@ -29,7 +29,7 @@ function getCookieVal (offset) {
     if (endstr == -1) {
         enstr = document.cookie.length;
     }
-    return unescape (document.cookie.substring(offset, endstr));
+    return unescape (document.cookie.substring(offset, endstr)); // unescape is deprecated !!!!!!!!
 }
 
 // Ici nous allons isoler le texte du cookie.
@@ -106,9 +106,58 @@ function setCookie(name, value) {
     ((secure == true) ? "; secure" : "");
 }
 
+function register ( userName, value){
+    if (userName == "" || userName == null){
+        userName = "Unkown User";
+        // Si pas de nom d'utilisateur
+        // celui ci sera enregistré comme user inconnu
+    }
+    if ( getCookie('monCookie') == null){
+        var expdate = new Date()
+        //s'il n'existe aucun cookie du nom de "monCookie"
+        // on donne a la date d'expiration celle du jour
+        expdate.setTime(expdate.getTime()
+        + (1000 * 60 * 60 * 24 * 365));
+        // on donne à la date d'expiration en millisec une valeur correspondante à une année plus tard
+        setCookie ('monCookie', userName, expdate);
+        alert ("Merci de vous être enregistré, "
+                + userName
+                + "! cliquez sur OK pour entrer dans la "
+                + "partie privée de mon site.");
+        // chargement de la page destinée aux utilisateurs enregistrés:
+        location .href = "6-02.htm"
+    }
+}
+
+// Ce code recherche un cookie du nom de 'monCookie'
+// Sur la machine de l'user 
+// S'il existe c'est que l'utilisateur s'est deja enregistré
+// Si non , il faut lui demander de le faire.
+/////////////////////////////////////////////
+
+// Si mon cookie existe ...
+
+if (getCookie('monCookie') != null){
+    // Chargement de la page protégée à la place de la présente
+    location.href="6-02htm."
+}
 
 
 </script>
     
 </body>
 </html>
+
+traitement du code:
+
+1 - On commence par regarder s'il existe un cookie du nom de mon cookie. Si c'est le cas
+il charge la page 6-02.htm car cela indique que l'user s'est deja enregistré
+
+2 - S'il ne le trouve pas , il continue de charger le document html de la page d'enregistrement dont le corps 
+contient un bouton d'enregistrement
+
+3 - Lorsq'un utilisateur clique sur ce bouton js execute la fonction register(, laquelle
+) a son tour appelle la méthode set cookie pour enregistrer un cookie sur la machine
+de l'utilisateur
+
+4 - ensuite la fonction register() charge la page réservée aux seul utilisateur enregistrés.
